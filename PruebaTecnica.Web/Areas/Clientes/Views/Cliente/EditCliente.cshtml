@@ -1,0 +1,63 @@
+﻿@model PruebaTecnica.Web.Areas.Clientes.Models.ClienteViewModel
+
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Editar Cliente";
+    @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+}
+
+
+<div class="row">
+
+    <div class="col-lg-12">
+        <form method="post" asp-area="Clientes" asp-controller="Cliente" asp-action="EditClientePost">
+            <input type="hidden" asp-for="ClienteId" />
+            <input type="hidden" asp-for="FechaCreacion" />
+
+            <div asp-validation-summary="ModelOnly" class="danger-text"></div>
+            <div class="row mb-2">
+                <label for="Nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Nombre" class="form-control" id="Nombre">
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <div class="row mb-2">
+                <label for="Apellido" class="col-sm-2 col-form-label">Apellido</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Apellido" class="form-control" id="Apellido">
+                    <span asp-validation-for="Apellido" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <label for="DocumentoIdentidad" class="col-sm-2 col-form-label">Documento de identidad</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="DocumentoIdentidad" class="form-control" id="DocumentoIdentidad">
+                    <span asp-validation-for="DocumentoIdentidad" class="text-danger"></span>
+                
+                </div>
+            </div>
+
+            <div class="row ">
+                <div class="col-lg-12 text-center">
+                    <button class="btn btn-sm btn-success ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-save" viewBox="0 0 16 16">
+                            <path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z" />
+                        </svg>
+                        Guardar
+                    </button>
+                </div>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
